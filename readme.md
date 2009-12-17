@@ -1,7 +1,7 @@
 Translate
 ==========
 
-Haskell binding to google translate
+Haskell binding to Google translate
 
     ghci
     
