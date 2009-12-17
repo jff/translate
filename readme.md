@@ -5,4 +5,11 @@ Haskell binding to google translate
 
     ghci
     
-    > :m 
+    > :m Text.Translate
+    > translate "en" "fr" "hello"
+    
+    Just "bonjour"
+    
+
+
+    

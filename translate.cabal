@@ -1,7 +1,7 @@
 Name:                 translate
 Version:              2009.12.1
 Build-type:           Simple
-Synopsis:             askell binding to google translate
+Synopsis:             Haskell binding to google translate
 Description:
 
 
