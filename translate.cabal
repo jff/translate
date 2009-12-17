@@ -2,7 +2,7 @@ Name:                 translate
 Version:              2009.12.17
 Build-type:           Simple
 Synopsis:             Haskell binding to Google translate
-Description:
+Description:          translate "en" "fr" "hello"
 
                       
 
