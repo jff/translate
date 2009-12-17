@@ -18,7 +18,7 @@ data-files:           readme.md, changelog.md
 
 library
   ghc-options: -Wall
-  build-depends: base >= 4 && < 5, curl, json
+  build-depends: base >= 4 && < 5, curl, json, network
   hs-source-dirs: src/
   exposed-modules:  
                     Text.Translate

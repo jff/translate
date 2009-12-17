@@ -2,13 +2,11 @@
 
 module Text.Translate (translate) where
 
-import Curl
-import Hack.Contrib.Utils
 import Text.JSON.Generic
-import qualified TranslateStatus as T
 import Network.Curl
 import qualified Data.List as L
 import Prelude hiding ((.), (-))
+import Network.URI
 
 -- http://ajax.googleapis.com/ajax/services/language/translate?v=1.0&langpair=en|de&q=Hello+World
 
@@ -21,7 +19,7 @@ import Prelude hiding ((.), (-))
 curl :: String -> IO (Maybe String)
 curl x = do
   (r, s) <- curlGetString x []
-  if r.is CurlOK
+  if r == CurlOK
     then return - Just s
     else return Nothing
 
@@ -66,7 +64,7 @@ translate from to what = do
     Just x -> 
       let status = x.decodeJSON
       in
-      if status.responseStatus.is 200
+      if status.responseStatus == 200
         then do
           let rgood = x.decodeJSON
           return - Just - rgood.responseData.translatedText
@@ -90,3 +88,6 @@ infixr 0 -
 
 join :: [a] -> [[a]] -> [a]
 join = L.intercalate
+
+escape_uri :: String -> String
+escape_uri = escapeURIString isAllowedInURI
