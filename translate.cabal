@@ -1,9 +1,8 @@
 Name:                 translate
-Version:              2009.12.17
+Version:              2010.1.24
 Build-type:           Simple
-Synopsis:             Haskell binding to Google translate
-Description:          translate "en" "fr" "hello"
-
+Synopsis:             Haskell binding to Google's AJAX Language API for Translation and Detection
+Description:          Haskell binding to Google's AJAX Language API for Translation and Detection.
                       
 
 License:              BSD3
@@ -12,13 +11,16 @@ Author:               Wang, Jinjing
 Maintainer:           Wang, Jinjing <nfjinjing@gmail.com>
 Build-Depends:        base
 Cabal-version:        >= 1.2
-category:             Codec
+category:             Text
 homepage:             http://github.com/nfjinjing/translate
 data-files:           readme.md, changelog.md
 
 library
   ghc-options: -Wall
-  build-depends: base >= 4 && < 5, curl, json, network
+  build-depends: base >= 4 && < 5, curl, json, network, utf8-string
   hs-source-dirs: src/
   exposed-modules:  
                     Text.Translate
+                    Text.Language.Translate
+                    Text.Language.Detect
+                    Text.Language.Internals
